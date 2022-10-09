@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Search from "./components/Search";
+import vergoedingen from '../data.json'
 
 const fetchSuggestions = async (query: string) => {
-  const res = await fetch("../data.json");
-  const data: Array<string> = await res.json();
-  return data.filter((vergoeding) =>
+  // const res = await fetch("../data.json");
+  // const data: Array<string> = await res.json();
+  return vergoedingen.filter((vergoeding) =>
     vergoeding.toLowerCase().includes(query.toLowerCase())
   );
 };
